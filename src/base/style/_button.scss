@@ -1,0 +1,19 @@
+@charset 'utf-8';
+
+button.dc-button {
+	display: inline-block;
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	background: $white;
+	border-radius: $button-normal-border-radius;
+	border-color: $button-default-border;
+	color: $button-default-color;
+	-webkit-appearance: none;
+	text-align: center;
+	outline: none;
+
+	& + .dc-button {
+		margin-left: 10px;
+	}
+}
