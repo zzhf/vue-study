@@ -7,13 +7,19 @@
                 <slot>
                     <p class="dc-alert-description" v-if="description">{{ description }}</p>
                 </slot>
-                <i class="dc-alert-closebtn" v-show="closable" @click="click"></i>
+                <i class="dc-alert-closebtn" v-show="closable" @click="close"></i>
             </div>
         </div>
     </transition>
 </template>
 
 <script>
+    const TYPE_CLASS_MAP = {
+        'success': 'dc-icon-circle-check',
+        'warning': 'dc-icon-warning',
+        'error': 'dc-icon-error'
+    }
+
     export default {
         name: 'DcAlert',
 
@@ -30,6 +36,10 @@
                 type: Boolean,
                 default: false
             },
+            type: {
+                type: String,
+                default: 'info'
+            },
             showIcon: {
                 type: Boolean,
                 default: true
@@ -42,6 +52,12 @@
 
         data() {
             return {
+            }
+        },
+
+        computed: {
+            typeClass() {
+                return `dc-alert-${ this.type }`
             }
         },
 

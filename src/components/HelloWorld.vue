@@ -1,8 +1,10 @@
 <template>
-    <dc-button>{{ msg }}</dc-button>
-    <dc-alert>
-        我是一个默认的弹出框
-    </dc-alert>
+    <div class="demo">
+        <dc-button>{{ msg }}</dc-button>
+        <dc-alert>
+            我是一个默认的弹出框
+        </dc-alert>
+    </div>
 </template>
 
 <script>
